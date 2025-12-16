@@ -7,18 +7,18 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/IMG/png/logo/rebelwear-isotipo.png" type="image/x-icon">
-    <link rel="stylesheet" href="/CSS/estyle.css">
+    <link rel="stylesheet" href="/CSS/style.css">
     <title>REBELWEAR</title>
 </head>
 <body>
     <nav id="nav-index">
-        <img src="/IMG/png/logo/rebelwear-imagotipo.png" alt="RebelWear Imagotipo">
+        <img src="/IMG/png/logo/rebelwear-imagotipo.png" alt="RebelWear Imagotipo" id="logo-nav">
         <a href="#header-index">INICIO</a>
         <a href="#colecciones">COLECCIONES</a>
         <a href="#ofertas">OFERTAS</a>
         <a href="#nosotros">NOSOTROS</a>
-        <img src="/IMG/png/icons/index-page/user-icon.png" alt="User Icon">
-        <img src="/IMG/gif/moving-icons/carrito-icon.gif" alt="Carrito Icon">
+        <img src="/IMG/png/icons/index-page/user-icon.png" alt="User Icon" id="user-icon">
+        <img src="/IMG/gif/moving-icons/carrito-icon.gif" alt="Carrito Icon" id="carrito-icon">
     </nav>
 
     <header id="header-index">
@@ -43,26 +43,183 @@
             </div>
 
             <div id="titular-inicio">
-                <p>DESAFÍA<br>TUS LÍMITES</p>
+                <h1>DESAFÍA<br>TUS LÍMITES</h1>
                 <p>Ropa para hombres y mujeres que no temen destacar.<br>Poder, estilo y libertad en movimiento.</p>
             </div>
 
             <div id="btn-inicio">
-                <button id="btn-explorar-coleccion">Explorar Colección   →</button>
-                <button id="btn-ver-ofertas">Ver Ofertas</button>
+                <a href="#coleccion" id="explorar-coleccion">Explorar Colección   →</a>
+                <a href="#ofertas">Ver Ofertas</a>
             </div>
         </div>
 
-        <img src="/IMG/png/images/fondo-index.png" alt="Foto Inicio">
+        <img src="/IMG/png/images/fondo-index.png" alt="Foto Inicio" id="fondo-inicio">
 
     </header>
 
     <main id="main-index">
-        
+
+        <section id="sect-destacado">
+            <h3>LO MÁS DESTACADO</h3>
+            <h1><i>COLECCIÓN <span class="red-font">URBANA</span></i></h1>
+
+            <div id="dest-foto-1">
+                <h2>HOT SALE</h2>
+                <div class="producto-dest"></div>
+                <h1>URBAN RIOT</h1>
+            </div>
+
+            <div id="dest-foto-2">
+                <div class="producto-dest"></div>
+                <h1>IRON CODE</h1>
+            </div>
+
+            <div id="dest-foto-3">
+                <h2>NUEVO</h2>
+                <div class="producto-dest"></div>
+                <h1>BLACK SIGNAL</h1>
+            </div>
+            
+        </section>
+
+        <section id="info-adit">
+            <div id="info-envio-gratis">
+                <div id="camion-icon">
+                    <img src="/IMG/png/icons/index-page/camion-rojo.png" alt="Icono Camión">
+                </div>
+                <h3>ENVÍO GRATIS</h3>
+                <p>En compras mayores a $999</p>
+            </div>
+
+            <div id="info-compra-segura">
+                <div id="escudo-icon">
+                    <img src="/IMG/png/icons/index-page/escudo-rojo.png" alt="Icono Escudo">
+                </div>
+                <h3>COMPRA SEGURA</h3>
+                <p>100% protegido y seguro</p>
+            </div>
+
+            <div id="info-devoluciones">
+                <div>
+                    <img src="/IMG/png/icons/index-page/devolver-rojo.png" alt="icono-devoluciones">
+                </div>
+                <h3>DEVOLUCIONES</h3>
+                <p>30 días para devolver</p>
+            </div>
+
+            <div id="info-estilo-unico">
+                <div>
+                    <img src="/IMG/png/icons/index-page/rayo-rojo.png" alt="Icono Estilo Único">
+                </div>
+                <h3>ESTILO ÚNICO</h3>
+                <p>Diseños exclusivos</p>
+            </div>
+        </section>
+
+        <section id="preview-coleccion">
+
+            <h3>NUESTROS PRODUCTOS</h3>
+            <h1><i>COLECCIÓN <span class="red-font">COMPLETA</span></i></h1>
+            <p>Descubre nuestra selección exclusiva de ropa diseñada para hombres y mujeres con actitud.</p>
+
+            <div id="prev-foto-1">
+                <h2>NUEVO</h2>
+                <div class="prev-producto"></div>
+                <p class="precio-tachado"></p>
+            </div>
+
+            <div id="prev-foto-2">
+                <h2>HOT SALE</h2>
+                <div class="producto"></div>
+                <p class="precio-tachado"></p>
+            </div>
+
+            <div id="prev-foto-3">
+                <div class="prev-producto"></div>
+                <p class="precio-tachado"></p>
+            </div>
+
+            <div id="prev-foto-4">
+                <h2>NUEVO</h2>
+                <div class="prev-producto"></div>
+                <p class="precio-tachado"></p>
+            </div>
+
+            <div id="prev-foto-5">
+                <div class="prev-producto"></div>
+                <p class="precio-tachado"></p>
+            </div>
+
+            <div id="prev-foto-6">
+                <div class="prev-producto"></div>
+                <p class="precio-tachado"></p>
+            </div>
+
+            <a href="#coleccion-completa" id="ver-todos-producto">VER TODOS LOS PRODUCTOS</a>
+
+        </section>
+
+        <section id="sect-subs">
+            <h3>NEWSLETTER</h3>
+            <h1><i>ÚNETE AL <span class="red-font">MOVIMIENTO</span></i></h1>
+            <p>Suscríbete y recibe ofertas, nuevos lanzamientos y contenido exclusivo directo en tu correo.</p>
+
+            <form action="#" method="post" id="form-subs">
+                <input type="email" id="email-subs" placeholder="Tu correo electrónico">
+                <button type="submit" id="btn-subs">Suscribirme   →</button>
+            </form>
+
+            <p>No spam. Solo ofertas y contenido de valor. ¡100% GRATIS!</p>
+        </section>
+
     </main>
 
     <footer id="footer-index">
+        <div id="info-redes">
+            <img src="/IMG/png/logo/rebelwear-imagotipo.png" alt="RebelWear Imagotipo" id="logo-footer">
 
+            <p>Ropa para hombres y mujeres que<br>desafían sus límites. Actitud imparable.</p>
+
+            <div id="btns-redes">
+                <img src="/IMG/png/icons/redes-sociales-icons/fb-icon.png" alt="Icono de Facebook" id="facebook-icon">
+                <img src="/IMG/png/icons/redes-sociales-icons/ig-icon.png" alt="Icono de Instagram" id="instagram-icon">
+                <img src="/IMG/png/icons/redes-sociales-icons/tiktok-icon.png" alt="Icono de Tiktok" id="tiktok-icon">
+                <img src="/IMG/png/icons/redes-sociales-icons/youtube-icon.png" alt="Icono de Youtube" id="youtube-icon">
+            </div>
+        </div>
+
+        <div id="tienda">
+            <h3>TIENDA</h3>
+            <p>Nuevos Lanzamientos</p>
+            <p>Colecciones</p>
+            <p>Ofertas Especiales</p>
+        </div>
+
+        <div id="informacion">
+            <h3>INFORMACIÓN</h3>
+            <p>Sobre Nosotros</p>
+            <p>Contacto</p>
+            <p>Trabaja Con Nosotros</p>
+        </div>
+
+        <div id="ayuda">
+            <h3>AYUDA</h3>
+            <p>Envíos</p>
+            <p>Devoluciones</p>
+            <p>Guía de Tallas</p>
+            <p>Preguntas Frecuentes</p>
+        </div>
+        
+        <hr>
+        
+        <div id="copyright">
+            <p>© 2025 RebelWear. Desarrollo web por <a href="https://github.com/jorgegmch">Jorge Gomez</a>. Todos los derechos reservados.</p>
+        </div>
+
+        <div id="condiciones-politicas">
+            <a href="#">Términos y Condiciones</a>
+            <a href="#">Política de Privacidad</a>
+        </div>
     </footer>
 </body>
 </html>
