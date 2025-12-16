@@ -1,8 +1,10 @@
-# INTRODUCCIÓN:
+## ANÁLISIS
+
+## Descripción
 
 Este archivo contiene explicación detallada sobre las decisiones de diseño, estructuras de datos, filtros y ordenamientos de usabilidad, que fueron implementados durante el proyecto con el objetivo de consolidar los conocimientos vistos previamente en clase de programación avanzada, modulo de JavaScript.
 
-## DECISIONES DE DISEÑO
+## Decisiones de diseño
 
 1. Inicialicé repositorio en GitHub para almacenar todo el proyecto.
 
@@ -19,7 +21,7 @@ Este archivo contiene explicación detallada sobre las decisiones de diseño, es
 
 5. 
 
-## ESTRUCTURA DE DATOS
+## Estructura de datos
 
 
-## JUST. FILTROS Y ORDENAMIENTOS DESDE LA USABILIDAD
+## Just. filtros y ordenamientos desde la usabilidad
