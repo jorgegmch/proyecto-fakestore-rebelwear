@@ -1,5 +1,3 @@
-(    Archivo: analisis.md    )
-
 # INTRODUCCIÓN:
 
 Este archivo contiene explicación detallada sobre las decisiones de diseño, estructuras de datos, filtros y ordenamientos de usabilidad, que fueron implementados durante el proyecto con el objetivo de consolidar los conocimientos vistos previamente en clase de programación avanzada, modulo de JavaScript.
