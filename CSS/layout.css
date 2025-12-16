@@ -1,7 +1,69 @@
 /* Estilos para los NAV */
 
+.main-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 1.2rem 3rem;
+
+    background-color: #000000;
+}
+
+.logo-nav {
+    height: 42px;
+    width: auto;
+    display: block;
+}
+
+.menu-principal {
+    display: flex;
+    gap: 1.7rem;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor-menu a {
+    text-decoration: none;
+    color: #ffffff;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    transition: opacity 0.2s ease;
+}
+
+.contenedor-menu a:hover {
+    opacity: 0.7;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+#user-icon {
+    height: 22px;
+    width: auto;
+    cursor: pointer;
+}
+
+#carrito-icon {
+    height: 28px;
+    width: auto;
+    cursor: pointer;
+}
 
 /* Estilos para los FOOTER */
+
 
 

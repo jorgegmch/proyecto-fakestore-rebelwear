@@ -14,20 +14,30 @@
     <title>RebelWear</title>
 </head>
 <body>
-    <nav class="nav-index">
+    <nav class="main-nav">
         <a href="#header-index" class="nav-logo">
             <img src="/IMG/png/logo/rebelwear-imagotipo.png" alt="RebelWear Imagotipo" class="logo-nav">
         </a>
 
         <ul class="menu-principal">
-            <li><a href="#header-index" class="link-inicio">INICIO</a></li>
-            <li><a href="#colecciones" class="link-coleccion">COLECCIONES</a></li>
-            <li><a href="#ofertas" id="link-ofertas">OFERTAS</a></li>
-            <li><a href="#nosotros" id="link-nosotros">NOSOTROS</a></li>
+            <li class="contenedor-menu"><a href="#header-index" id="link-inicio">INICIO</a></li>
+
+            <li class="contenedor-menu"><a href="/HTML/catalog.html" id="link-coleccion">COLECCIONES</a></li>
+
+            <li class="contenedor-menu"><a href="#" id="link-ofertas">OFERTAS</a></li>
+
+            <li class="contenedor-menu"><a href="#" id="link-nosotros">NOSOTROS</a></li>
         </ul>
 
-        <img src="/IMG/png/icons/index-page/user-icon.png" alt="User Icon" id="user-icon">
-        <img src="/IMG/gif/moving-icons/carrito-icon.gif" alt="Carrito Icon" id="carrito-icon">
+        <div class="nav-actions">
+            <a href="/HTML/account.html" class="action-icons">
+                <img src="/IMG/png/icons/index-page/user-icon.png" alt="User Icon" id="user-icon">
+            </a>
+
+            <a href="/HTML/shopping-cart.html" class="action-icons">
+                <img src="/IMG/gif/moving-icons/carrito-icon.gif" alt="Carrito Icon" id="carrito-icon">
+            </a>
+        </div>
     </nav>
 
     <header id="header-index">
