@@ -1,4 +1,6 @@
-/* Estilos para los NAV */
+/* NAV */
+
+/* Estilos para los NAV en desktop */
 
 .main-nav {
     position: sticky;
@@ -62,6 +64,72 @@
     height: 36px;
     width: auto;
     cursor: pointer;
+}
+
+.nav-responsive {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.nav-responsive span {
+    width: 20px;
+    height: 3px;
+    background-color: #FFFFFF;
+}
+
+.menu-overlay {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 998;
+}
+
+/* Responsive para los NAV */
+
+@media (max-width: 1024px) {
+
+    .main-nav {
+        padding: 1rem 1rem;
+    }
+
+    .nav-responsive {
+        display: flex;
+    }
+
+    .menu-principal {
+        position: fixed;
+        top: 0;
+        right: 0;
+
+        width: 50vw;
+        height: 100vh;
+
+        background-color: #000000e6;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+
+        z-index: 999;
+    }
+
+    .menu-principal.activo {
+        transform: translateX(0);
+    }
+
+    .menu-overlay.activo {
+        opacity: 1;
+        pointer-events: all;
+    }
 }
 
 /* Estilos para los FOOTER */
