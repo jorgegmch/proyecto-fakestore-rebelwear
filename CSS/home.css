@@ -588,8 +588,23 @@
 
 /* SECCIÓN DE PREVISUALIZACIÓN DE LA COLECCIÓN */
 
+#preview-coleccion {
+    min-height: 160vh;
+    color: #FFFFFF;
+    background-color: #000000;
 
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto auto 1fr auto;
 
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+
+    padding: 1rem 8rem;
+    overflow: hidden;
+}
+
+/* Textos titulos propios de la sección */
 
 
 
