@@ -1,15 +1,15 @@
 // Nav responsive mobile
 
-const btnResponsive = document.querySelector(".nav-responsive");
+const btnMenu = document.querySelector(".nav-responsive");
 const menu = document.querySelector(".menu-principal");
 const overlay = document.querySelector(".menu-overlay");
 
-btnResponsive.addEventListener("click", () => {
-    menu.classList.toggle("activo");
-    overlay.classList.toggle("activo");
+btnMenu.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    overlay.classList.toggle("active");
 });
 
 overlay.addEventListener("click", () => {
-    menu.classList.remove("activo");
-    overlay.classList.remove("activo");
+    menu.classList.remove("active");
+    overlay.classList.remove("active");
 });
