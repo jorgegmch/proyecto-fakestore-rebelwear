@@ -428,15 +428,14 @@
 #txt-dest-foto2 {
     transform: rotate(90deg);
     transform-origin: left bottom;
-    bottom: 58.4rem;
-    left: 47rem;
+    bottom: 81.3rem;
+    left: 62rem;
 }
 
 #txt-dest-foto3 {
-    /* transform: rotate(0deg); */
     transform-origin: left bottom;
     bottom: 7.7rem;
-    left: 74.5rem;
+    left: 66.8rem;
 }
 
 /* Etiquetas sección destacados */
