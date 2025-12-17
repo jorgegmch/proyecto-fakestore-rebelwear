@@ -151,7 +151,8 @@
     font-weight: 700;
     text-align: center;
 
-    margin-bottom: 15px;
+    line-height: 1;
+    margin-bottom: 1.2rem;
 }
 
 .titulo-sect {
@@ -160,6 +161,7 @@
     font-weight: 700;
     text-align: center;
 
+    line-height: 1.1;
     margin-top: 0;
 }
 
@@ -182,16 +184,120 @@
 #sect-destacado {
     background-color: #000000;
     min-height: 95vh;
-    min-width: 100vw;
+    min-width: 100%;
     padding: 1rem 3rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto 1fr 1fr;
+
+    column-gap: 2rem;
+    row-gap: 2rem;
+
+    padding: 1rem 10rem;
+}
+
+#subtitle-dest,
+#titulo-dest {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+#sect-destacado h3 {
+    margin-bottom: 0;
+}
+
+#sect-destacado h1 {
+    margin-top: 1rem;
+}
+
+#dest-foto-1 {
+    grid-column: 1 / 2;
+    grid-row: 3 / 5;
+
+    position: relative;
+}
+
+#dest-foto-2 {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+
+    position: relative;
+}
+
+#dest-foto-3 {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+
+    position: relative;
+}
+
+#dest-foto-1,
+#dest-foto-2,
+#dest-foto-3 {
+    overflow: hidden;
 }
 
 .producto-dest {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 32px;
-    color: #FFFFFF;
+    position: absolute;
+    inset: 0;
+
+    background-color: blue;
+    background-size: cover;
+    background-position: center;
 }
+
+#txt-dest-foto1,
+#txt-dest-foto2,
+#txt-dest-foto3 {
+    position: relative;
+    bottom: 1rem;
+    left: 1rem;
+
+    margin: 0;
+    color: #FFFFFF;
+    font-size: 2.5rem;
+    letter-spacing: 0.10em;
+}
+
+/* Etiquetas sección destacados */
+#dest-foto-1 h2 {
+    width: 10.5rem;
+    height: 3rem;
+
+    position: absolute;
+    top: -1.5rem;
+    left: 0;
+
+    background-color: #DD0000;
+    color: #FFFFFF;
+    text-align: left;
+
+    padding: 0.5rem 0.5rem;
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    z-index: 1;
+}
+
+#dest-foto-3 h2 {
+    width: 7.6rem;
+    height: 3rem;
+
+    position: absolute;
+    top: -1.5rem;
+    left: 0;
+
+    background-color: #DD0000;
+    color: #FFFFFF;
+    text-align: left;
+
+    padding: 0.5rem 0.5rem;
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    z-index: 2;
+}
+
+
 
 
 
