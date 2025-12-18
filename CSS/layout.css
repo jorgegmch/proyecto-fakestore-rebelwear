@@ -139,7 +139,33 @@
     }
 }
 
+/* FOOTER */
+
 /* Estilos para los FOOTER */
 
+.main-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 30vh;
+    padding: 1.2rem 3rem;
+
+    background-color: #000000;
+}
+
+.logo-footer {
+    height: 42px;
+    width: auto;
+    display: block;
+}
+
+/* Re-color para el hr del footer*/
+.main-footer hr {
+    border: none;
+    height: 2px;
+    background-color: #FFFFFF;
+}
 
 
