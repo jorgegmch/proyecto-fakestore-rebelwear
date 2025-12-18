@@ -6,7 +6,6 @@
 
 #header-index {
     position: relative;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -378,7 +377,7 @@
     overflow: hidden;
     position: relative;
     transition: transform 0.4s ease;
-    clip-path: inset(0 3.2rem 0 0);
+    clip-path: inset(0 3.4rem 0 0);
 }
 
 #dest-foto-3 {
@@ -438,12 +437,13 @@
     transform-origin: right top;
 
     top: 45.1rem;
-    right: 6.5rem;
+    right: 6.9rem;
 }
 
 #txt-dest-foto3 {
+    transform-origin: right bottom;
     bottom: 5.6rem;
-    left: 72.1rem;
+    left: 59.9rem;
 }
 
 /* Etiquetas sección destacados */
@@ -613,6 +613,7 @@
 }
 
 /* Textos titulos propios de la sección */
+
 
 
 /* SECCIÓN SUSCRIBIRSE */

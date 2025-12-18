@@ -145,27 +145,164 @@
 
 .main-footer {
     display: flex;
-    align-items: center;
+    position: relative;
     justify-content: space-between;
-
+    
     width: 100%;
-    height: 30vh;
-    padding: 1.2rem 3rem;
+    height: 31vh;
 
+    border-bottom: 1px solid #FFFFFF;
+    color: #FFFFFF;
     background-color: #000000;
+    overflow: hidden;
 }
+
+/* Contenedores */
+
+.info-redes {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+
+    top: 51%;
+    left: 15%;
+    transform: translate( -50%, -50%);
+}
+
+.tienda {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+
+    top: 44%;
+    right: 50%;
+    transform: translate( -50%, -50%);
+}
+
+/* Información footer */
+
+.informacion {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+
+    top: 44%;
+    right: 28%;
+    transform: translate( -50%, -50%);
+}
+
+/* Ayuda footer */
+
+.ayuda {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+
+    top: 49%;
+    right: 1%;
+    transform: translate( -50%, -50%);
+}
+
+/* Textos del footer */
+
+.subtitles-sect-footer {
+    font-size: 1.6rem;
+    margin-bottom: -0.5rem;
+}
+
+.txt-sect-footer {
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+
+.txt-main-footer {
+    font-size: 1.2rem;
+}
+
+/*  Logo e iconos redes */
 
 .logo-footer {
-    height: 42px;
+    height: 90px;
     width: auto;
+}
+
+.facebook-icon,
+.instagram-icon,
+.tiktok-icon,
+.youtube-icon {
+    height: 2rem;
+    width: auto;
+    margin-right: 1rem;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btns-redes-footer {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.link-redes {
+    text-decoration: none;
+    color: inherit;
     display: block;
+    position: relative;
+
+    height: 4rem;
+    width: 4rem;
+
+    overflow: hidden;
+    border: 1px solid #FFFFFF;
 }
 
-/* Re-color para el hr del footer*/
-.main-footer hr {
-    border: none;
-    height: 2px;
-    background-color: #FFFFFF;
+/* Contenedor del link a redes sociales */
+
+.link-redes {
+    text-decoration: none;
+    color: inherit;
 }
 
+/* Sub-sección footer / copyright */
 
+.copyright-sect-footer {
+    display: flex;
+    position: relative;
+    flex-direction: row-reverse;
+    
+    width: 100%;
+    height: 6vh;
+    padding: 1rem 1rem;
+
+    background-color: #000000;
+    overflow: hidden;
+}
+
+.copyright-txt {
+    display: flex;
+    position: absolute;
+    
+    color: #FFFFFF;
+    top: 51%;
+    left: 18%;
+    transform: translate( -50%, -50%);
+}
+
+/* Links sub-sección footer */
+
+.link-sect-footer {
+    color: inherit;
+}
+
+.condiciones-politicas {
+    display: flex;
+    position: absolute;
+    gap: 1rem;
+    
+    color: #FFFFFF;
+    top: 51%;
+    right: -8.1%;
+    transform: translate( -50%, -50%);
+}
