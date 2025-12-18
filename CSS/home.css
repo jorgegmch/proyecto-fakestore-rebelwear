@@ -331,23 +331,22 @@
 /* SECCIOÓN DESTACADO */
 
 #sect-destacado {
+    position: relative;
     min-height: 140vh;
+    padding: 2rem 8rem 10rem;
+
     color: #FFFFFF;
     background-color: #000000;
+    overflow: hidden;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto 1fr 1fr;
-
     column-gap: 1.2rem;
     row-gap: 1.2rem;
-
-    position: relative;
-    padding: 2rem 8rem 10rem 8rem;
-    overflow: hidden;
 }
 
-/* Titulo de la sección */
+/* Titulos de la sección */
 
 #subtitle-dest,
 #titulo-dest {
@@ -360,44 +359,44 @@
     margin-bottom: 2rem;
 }
 
-/* Grid de fotos */
+/* Contenedores de imagen */
+
+#dest-foto-1,
+#dest-foto-2,
+#dest-foto-3 {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+}
+
+/* Posicionamiento grid */
 
 #dest-foto-1 {
     grid-column: 1 / 2;
     grid-row: 3 / 5;
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.4s ease;
     clip-path: inset(5rem 0 0 0);
 }
 
 #dest-foto-2 {
     grid-column: 2 / 3;
     grid-row: 3 / 4;
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.4s ease;
     clip-path: inset(0 3.4rem 0 0);
 }
 
 #dest-foto-3 {
     grid-column: 2 / 3;
     grid-row: 4 / 5;
-
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.4s ease;
 }
+
+/* Hover */
 
 #dest-foto-1:hover,
 #dest-foto-2:hover,
 #dest-foto-3:hover {
-    position: relative;
-    overflow: hidden;
     transform: scale(0.92);
 }
 
-/* Contenedor de imagen API -> JS sección destacados*/
+/* Contenedor de imagen (API) */
 
 .producto-dest {
     position: absolute;
@@ -406,9 +405,9 @@
     background-color: rgb(170, 170, 170);
     background-size: cover;
     background-position: center;
+
     z-index: 1;
 }
-
 
 /* Textos flotantes */
 
@@ -421,8 +420,11 @@
     color: #FFFFFF;
     font-size: 4rem;
     letter-spacing: 0.15em;
+
     z-index: 2;
 }
+
+/* Texto 1 */
 
 #txt-dest-foto1 {
     transform: rotate(-90deg);
@@ -432,6 +434,8 @@
     left: 8.3rem;
 }
 
+/* Texto 2 */
+
 #txt-dest-foto2 {
     transform: rotate(90deg);
     transform-origin: right top;
@@ -440,48 +444,47 @@
     right: 6.9rem;
 }
 
+/* Texto 3 */
+
 #txt-dest-foto3 {
     transform-origin: right bottom;
+
     bottom: 5.6rem;
     left: 59.9rem;
 }
 
-/* Etiquetas sección destacados */
+/* Etiquetas (HOT SALE / NUEVO) */
+
+#dest-foto-1 h2,
+#dest-foto-3 h2 {
+    position: absolute;
+    left: 0;
+
+    height: 3rem;
+    padding: 0.5rem;
+
+    background-color: #DD0000;
+    color: #FFFFFF;
+    text-align: left;
+
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+
+    z-index: 2;
+}
+
+/* HOT SALE - Sección destacado */
 
 #dest-foto-1 h2 {
     width: 10.5rem;
-    height: 3rem;
-
-    position: absolute;
     top: 3.4rem;
-    left: 0;
-
-    background-color: #DD0000;
-    color: #FFFFFF;
-    text-align: left;
-
-    padding: 0.5rem 0.5rem;
-    font-size: 1.8rem;
-    letter-spacing: 0.1rem;
-    z-index: 1;
 }
+
+/* NUEVO - Sección destacado */
 
 #dest-foto-3 h2 {
     width: 7.6rem;
-    height: 3rem;
-
-    position: absolute;
     top: -1.5rem;
-    left: 0;
-
-    background-color: #DD0000;
-    color: #FFFFFF;
-    text-align: left;
-
-    padding: 0.5rem 0.5rem;
-    font-size: 1.8rem;
-    letter-spacing: 0.1rem;
-    z-index: 2;
 }
 
 /* SECCIÓN INFO ADICIONAL */
@@ -618,9 +621,148 @@
 
 /* SECCIÓN SUSCRIBIRSE */
 
+#sect-subs {
+    position: relative;
 
+    min-height: 100vh;
+    width: 100vw;
+    
+    background-color: #000000;
+    border-bottom: 1px solid #DD0000;
+    overflow: hidden;
+}
 
+#sect-subs::before {
+    content: "";
+    position: absolute;
 
+    width: 90%;
+    height: 130%;
+
+    background: radial-gradient(
+        circle,
+        rgba(221, 0, 0, 0.25) 0%,
+        rgba(221, 0, 0, 0.15) 30%,
+        rgba(221, 0, 0, 0.05) 55%,
+        rgba(221, 0, 0, 0) 70%
+    );
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+#sect-subs > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Titulos de la sección */
+
+#subtitle-subs {
+    position: absolute;
+    display: flex;
+    align-items: center;
+
+    top: 21%;
+    right: 40%;
+    transform: translate( -50%, -50%);
+}
+
+#title-subs {
+    position: absolute;
+    display: flex;
+    align-items: center;
+
+    top: 35%;
+    right: -15%;
+    transform: translate( -50%, -50%);
+}
+
+#txt1-sect-subs {
+    position: absolute;
+    display: flex;
+    align-items: center;
+
+    top: 42%;
+    right: -22%;
+    transform: translate( -50%, -50%);
+
+    font-size: 2.2rem;
+}
+
+/* Fomrulario de la sección subscribirse */
+
+#form-subs {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+
+    top: 63%;
+    right: 30%;
+    transform: translate( -50%, -50%);
+}
+
+#email-subs {
+    font-size: 1.5rem;
+    align-items: center;
+    
+    height: 7rem;
+    width: 35rem;
+
+    padding-left: 1.5rem;
+    background-color: #1B1B1B;
+    border: 3px solid #6D6D6D;
+    color: #FFFFFF;
+}
+
+#btn-subs {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    top: 0;
+    right: -45%;
+
+    height: 4rem;
+    width: 15rem;
+
+    font-size: 1.5rem;
+    font-weight: 750;
+    color: #FFFFFF;
+
+    background-color: #DD0000;
+    border: none;
+}
+
+#btn-subs .flecha-simbolo {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+#btn-subs:hover .flecha-simbolo {
+    transform: translateX(6px);
+}
+
+/* Cuerpo de texto informativo del formulario */
+
+#txt2-sect-subs {
+    position: absolute;
+    display: flex;
+    align-items: center;
+
+    top: 70%;
+    right: 32.9%;
+    transform: translate( -50%, -50%);
+
+    font-size: 1.2rem;
+}
 
 
 
