@@ -343,7 +343,8 @@
     column-gap: 1.2rem;
     row-gap: 1.2rem;
 
-    padding: 1rem 8rem;
+    position: relative;
+    padding: 2rem 8rem 10rem 8rem;
     overflow: hidden;
 }
 
@@ -368,7 +369,7 @@
     overflow: hidden;
     position: relative;
     transition: transform 0.4s ease;
-    clip-path: inset(4rem 0 0 0);
+    clip-path: inset(5rem 0 0 0);
 }
 
 #dest-foto-2 {
@@ -377,7 +378,7 @@
     overflow: hidden;
     position: relative;
     transition: transform 0.4s ease;
-    clip-path: inset(0 3.5rem 0 0);
+    clip-path: inset(0 3.2rem 0 0);
 }
 
 #dest-foto-3 {
@@ -392,6 +393,8 @@
 #dest-foto-1:hover,
 #dest-foto-2:hover,
 #dest-foto-3:hover {
+    position: relative;
+    overflow: hidden;
     transform: scale(0.92);
 }
 
@@ -404,38 +407,43 @@
     background-color: rgb(170, 170, 170);
     background-size: cover;
     background-position: center;
+    z-index: 1;
 }
+
 
 /* Textos flotantes */
 
 #txt-dest-foto1,
 #txt-dest-foto2,
 #txt-dest-foto3 {
-    position: relative;
+    position: absolute;
     margin: 0;
 
     color: #FFFFFF;
     font-size: 4rem;
+    letter-spacing: 0.15em;
+    z-index: 2;
 }
 
 #txt-dest-foto1 {
     transform: rotate(-90deg);
     transform-origin: left bottom;
-    bottom: 6rem;
-    left: 0.5rem;
+
+    bottom: 9.9rem;
+    left: 8.3rem;
 }
 
 #txt-dest-foto2 {
     transform: rotate(90deg);
-    transform-origin: left bottom;
-    bottom: 81.3rem;
-    left: 62rem;
+    transform-origin: right top;
+
+    top: 45.1rem;
+    right: 6.5rem;
 }
 
 #txt-dest-foto3 {
-    transform-origin: left bottom;
-    bottom: 7.7rem;
-    left: 66.8rem;
+    bottom: 5.6rem;
+    left: 72.1rem;
 }
 
 /* Etiquetas sección destacados */
@@ -445,7 +453,7 @@
     height: 3rem;
 
     position: absolute;
-    top: 2.5rem;
+    top: 3.4rem;
     left: 0;
 
     background-color: #DD0000;
