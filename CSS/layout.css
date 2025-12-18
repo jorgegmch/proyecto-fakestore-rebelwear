@@ -226,6 +226,8 @@
     width: auto;
 }
 
+/* Contenedor del link a redes sociales */
+
 .facebook-icon,
 .instagram-icon,
 .tiktok-icon,
@@ -258,11 +260,9 @@
     border: 1px solid #FFFFFF;
 }
 
-/* Contenedor del link a redes sociales */
-
-.link-redes {
-    text-decoration: none;
-    color: inherit;
+.link-redes:hover {
+    background-color: #DD0000;
+    border: 1px solid #DD0000;
 }
 
 /* Sub-sección footer / copyright */
