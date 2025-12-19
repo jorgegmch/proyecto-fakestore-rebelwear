@@ -1,1 +1,155 @@
 /* Estilos especificos solo para SHOPPING CART */
+
+#cart-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+
+    padding: 3rem 5rem;
+    background: #000000;
+    color: #FFFFFF;
+    border-bottom: 2px solid #DD0000;
+}
+
+#cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.cart-header h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-top: -1rem;
+}
+
+.cart-header h1 span {
+    color: #DD0000;
+}
+
+.cart-header p {
+    color: #6D6D6D;
+    margin-top: -2rem;
+    font-size: 1.3rem;
+}
+
+.cart-card {
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    gap: 1.5rem;
+
+    border: 2px solid #6D6D6D;
+    padding: 1rem;
+    background: #000000;
+}
+
+.img-cart {
+    width: 120px;
+    height: 120px;
+    background: #6D6D6D;
+}
+
+.cart-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.cart-info p {
+    font-size: 0.85rem;
+    color: #6D6D6D;
+}
+
+.cart-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1rem;
+}
+
+.cart-controls button {
+    background: none;
+    border: 1px solid #6D6D6D;
+    color: #FFFFFF;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.cart-price {
+    text-align: right;
+}
+
+.cart-price strong {
+    display: block;
+    font-size: 1rem;
+}
+
+.cart-price small {
+    color: #6D6D6D;
+    font-size: 0.75rem;
+}
+
+#cart-summary {
+    border: 2px solid #DD0000;
+    padding: 2rem;
+}
+
+#cart-summary h2 {
+    margin-bottom: 1rem;
+}
+
+.summary-line,
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.8rem 0;
+}
+
+.summary-total {
+    font-weight: 800;
+    color: #DD0000;
+    border-top: 1px solid #6D6D6D;
+    padding-top: 1rem;
+}
+
+.btn-pay {
+    width: 100%;
+    background: #DD0000;
+    color: #FFFFFF;
+    border: none;
+    padding: 0.8rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-back {
+    width: 100%;
+    background: none;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    padding: 0.6rem;
+    margin-top: 0.6rem;
+    cursor: pointer;
+
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.btn-back:hover {
+    color: #000000;
+    background-color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+}
+
+.summary-info {
+    margin-top: 1.5rem;
+    list-style: none;
+    font-size: 0.75rem;
+    color: #6D6D6D;
+}
+
+.summary-info li {
+    margin-bottom: 0.4rem;
+}
