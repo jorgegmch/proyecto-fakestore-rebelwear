@@ -447,10 +447,10 @@
 /* Texto 3 */
 
 #txt-dest-foto3 {
-    transform-origin: left bottom;
+    transform-origin: right bottom;
 
     bottom: 5.6rem;
-    left: 72.1rem;
+    right: 35.5rem;
 }
 
 /* Etiquetas (HOT SALE / NUEVO) */
