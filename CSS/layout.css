@@ -283,10 +283,11 @@
 .copyright-txt {
     display: flex;
     position: absolute;
+    font-size: 1.2rem;
     
     color: #FFFFFF;
     top: 51%;
-    left: 18%;
+    left: 20%;
     transform: translate( -50%, -50%);
 }
 
@@ -300,9 +301,10 @@
     display: flex;
     position: absolute;
     gap: 1rem;
+    font-size: 1.2rem;
     
     color: #FFFFFF;
     top: 51%;
-    right: -8.1%;
+    right: -4.2%;
     transform: translate( -50%, -50%);
 }

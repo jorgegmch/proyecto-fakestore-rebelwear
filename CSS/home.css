@@ -600,7 +600,8 @@
 /* SECCIÓN DE PREVISUALIZACIÓN DE LA COLECCIÓN */
 
 #preview-coleccion {
-    max-height: 220vh;
+    max-height: 180vh;
+
     color: #FFFFFF;
     background-color: #000000;
 
@@ -840,8 +841,8 @@
     display: flex;
     align-items: center;
 
-    top: 21%;
-    right: 40%;
+    top: 23%;
+    right: 43%;
     transform: translate( -50%, -50%);
 }
 
@@ -851,7 +852,7 @@
     align-items: center;
 
     top: 35%;
-    right: -15%;
+    right: -5%;
     transform: translate( -50%, -50%);
 }
 
@@ -861,7 +862,7 @@
     align-items: center;
 
     top: 42%;
-    right: -22%;
+    right: -10%;
     transform: translate( -50%, -50%);
 
     font-size: 2.2rem;
@@ -875,8 +876,8 @@
     align-items: center;
     gap: 0.8rem;
 
-    top: 63%;
-    right: 30%;
+    top: 60%;
+    right: 33%;
     transform: translate( -50%, -50%);
 }
 
@@ -930,8 +931,8 @@
     display: flex;
     align-items: center;
 
-    top: 70%;
-    right: 32.9%;
+    top: 65%;
+    right: 35.3%;
     transform: translate( -50%, -50%);
 
     font-size: 1.2rem;
