@@ -1,1 +1,47 @@
 /* Estilos especificos solo para el CATALOG */
+
+/* HEADER */
+
+#header-catalog {
+    position: relative;
+    display: block;
+
+    background-color: #000000;
+
+    min-height: 22vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+/* Titulos de la página */
+
+#title-catalog {
+    color: #FFFFFF;
+    font-size: 5rem;
+    font-weight: 800;
+    margin-left: 3rem;
+}
+
+#red-font-catalog {
+    color: #DD0000;
+}
+
+#txt-subtitle-catalog {
+    color: #FFFFFF;
+    font-size: 2rem;
+    margin-left: 3rem;
+    margin-top: -2rem;
+}
+
+/* MAIN */
+
+#main-catalog {
+    position: relative;
+    display: grid;
+
+    background-color: #000000;
+
+    min-height: 140vh;
+    width: 100vw;
+    overflow: hidden;
+}
