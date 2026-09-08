@@ -11,6 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const SHIPPING_COST = 15;
     const FREE_SHIPPING_THRESHOLD = 200;
 
+    const continueBtn = document.getElementById("btn-continue-shopping");
+    continueBtn.addEventListener("click", () => {
+        window.location.href = "catalog.html";
+    });
+
     let cart = getCart();
 
     function renderCart() {
