@@ -21,6 +21,9 @@
 .logo-nav {
     height: 42px;
     width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    flex-shrink: 0;
     display: block;
 }
 
@@ -96,6 +99,13 @@
     z-index: 998;
 }
 
+/* Corta la transición del menú mientras se arrastra el borde de la
+   ventana, para que no se vea el "flash" al cruzar el breakpoint */
+body.resizing .menu-principal,
+body.resizing .menu-overlay {
+    transition: none !important;
+}
+
 /* Responsive para los NAV */
 
 @media (max-width: 1024px) {
@@ -144,70 +154,35 @@
 /* Estilos para los FOOTER */
 
 .main-footer {
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-    
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 2.5rem;
+
     width: 100%;
-    height: 31vh;
+    padding: 3rem 3rem 2.5rem;
 
     border-bottom: 1px solid #FFFFFF;
     color: #FFFFFF;
     background-color: #000000;
-    overflow: hidden;
 }
 
 /* Contenedores */
 
-.info-redes {
-    display: flex;
-    position: absolute;
-    flex-direction: column;
-
-    top: 51%;
-    left: 15%;
-    transform: translate( -50%, -50%);
-}
-
-.tienda {
-    display: flex;
-    position: absolute;
-    flex-direction: column;
-
-    top: 44%;
-    right: 50%;
-    transform: translate( -50%, -50%);
-}
-
-/* Información footer */
-
-.informacion {
-    display: flex;
-    position: absolute;
-    flex-direction: column;
-
-    top: 44%;
-    right: 26%;
-    transform: translate( -50%, -50%);
-}
-
-/* Ayuda footer */
-
+.info-redes,
+.tienda,
+.informacion,
 .ayuda {
     display: flex;
-    position: absolute;
     flex-direction: column;
-
-    top: 49%;
-    right: 1%;
-    transform: translate( -50%, -50%);
+    align-items: flex-start;
+    gap: 0.6rem;
 }
 
 /* Textos del footer */
 
 .subtitles-sect-footer {
     font-size: 1.6rem;
-    margin-bottom: -0.5rem;
+    margin-bottom: 0.2rem;
 }
 
 .txt-sect-footer {
@@ -224,6 +199,8 @@
 .logo-footer {
     height: 90px;
     width: auto;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 /* Contenedor del link a redes sociales */
@@ -234,7 +211,6 @@
 .youtube-icon {
     height: 2rem;
     width: auto;
-    margin-right: 1rem;
 
     position: absolute;
     top: 50%;
@@ -245,6 +221,7 @@
 .btns-redes-footer {
     display: flex;
     gap: 1.5rem;
+    margin-top: 0.5rem;
 }
 
 .link-redes {
@@ -269,26 +246,20 @@
 
 .copyright-sect-footer {
     display: flex;
-    position: relative;
-    flex-direction: row-reverse;
-    
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.5rem;
+
     width: 100%;
-    height: 6vh;
-    padding: 1rem 1rem;
+    padding: 1.2rem 3rem;
 
     background-color: #000000;
-    overflow: hidden;
 }
 
 .copyright-txt {
-    display: flex;
-    position: absolute;
     font-size: 1.2rem;
-    
     color: #FFFFFF;
-    top: 51%;
-    left: 20%;
-    transform: translate( -50%, -50%);
 }
 
 /* Links sub-sección footer */
@@ -299,12 +270,48 @@
 
 .condiciones-politicas {
     display: flex;
-    position: absolute;
+    flex-wrap: wrap;
     gap: 1rem;
     font-size: 1.2rem;
-    
     color: #FFFFFF;
-    top: 51%;
-    right: -4.2%;
-    transform: translate( -50%, -50%);
+}
+
+/* Responsive footer */
+
+@media (max-width: 1024px) {
+
+    .main-footer {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 2.5rem 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .main-footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 2.5rem 1.5rem;
+    }
+
+    .info-redes,
+    .tienda,
+    .informacion,
+    .ayuda {
+        align-items: center;
+    }
+
+    .btns-redes-footer {
+        justify-content: center;
+    }
+
+    .copyright-sect-footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.2rem;
+    }
+
+    .condiciones-politicas {
+        justify-content: center;
+    }
 }
