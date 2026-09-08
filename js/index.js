@@ -8,15 +8,26 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!products.length) return;
 
     // Destacados
-    const featuredContainers = document.querySelectorAll(
-        "#sect-destacado .producto-dest"
-    );
+    const featuredCards = document.querySelectorAll("#sect-destacado .dest-foto");
 
     products.slice(0, 3).forEach((product, index) => {
-        const container = featuredContainers[index];
-        if (!container) return;
+        const card = featuredCards[index];
+        if (!card) return;
 
-        setBackgroundImage(container, product.image);
+        const image = card.querySelector(".producto-dest");
+        const badge = card.querySelector(".product-badge");
+
+        setBackgroundImage(image, product.image);
+
+        if (product.onSale) {
+            badge.textContent = "HOT SALE";
+            badge.style.display = "flex";
+        } else if (product.isNew) {
+            badge.textContent = "NUEVO";
+            badge.style.display = "flex";
+        } else {
+            badge.style.display = "none";
+        }
     });
 
     // Preview colección
