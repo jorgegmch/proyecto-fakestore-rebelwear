@@ -798,10 +798,18 @@
 
 #sect-subs {
     position: relative;
+    width: 100%;
+    min-height: 70vh;
 
-    min-height: 100vh;
-    width: 100vw;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.2rem;
+
+    padding: 5rem 2rem;
+
     background-color: #000000;
     border-bottom: 1px solid #DD0000;
     overflow: hidden;
@@ -835,59 +843,39 @@
     z-index: 1;
 }
 
-/* Titulos de la sección */
+/* Título y texto de la sección */
 
 #subtitle-subs {
-    position: absolute;
-    display: flex;
-    align-items: center;
-
-    top: 23%;
-    right: 43%;
-    transform: translate( -50%, -50%);
+    margin: 0;
 }
 
 #title-subs {
-    position: absolute;
-    display: flex;
-    align-items: center;
-
-    top: 35%;
-    right: -5%;
-    transform: translate( -50%, -50%);
+    margin: 0;
 }
 
 #txt1-sect-subs {
-    position: absolute;
-    display: flex;
-    align-items: center;
-
-    top: 42%;
-    right: -10%;
-    transform: translate( -50%, -50%);
-
-    font-size: 2.2rem;
+    max-width: 44rem;
+    font-size: 1.6rem;
 }
 
-/* Fomrulario de la sección subscribirse */
+/* Formulario de la sección suscribirse */
 
 #form-subs {
-    position: absolute;
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 0.8rem;
 
-    top: 60%;
-    right: 33%;
-    transform: translate( -50%, -50%);
+    margin-top: 0.5rem;
 }
 
 #email-subs {
     font-size: 1.5rem;
-    align-items: center;
-    
-    height: 7rem;
-    width: 35rem;
+
+    height: 4.5rem;
+    width: 30rem;
+    max-width: 100%;
 
     padding-left: 1.5rem;
     background-color: #1B1B1B;
@@ -896,17 +884,13 @@
 }
 
 #btn-subs {
-    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
 
-    top: 0;
-    right: -45%;
-
-    height: 4rem;
-    width: 15rem;
+    height: 4.5rem;
+    padding: 0 2rem;
 
     font-size: 1.5rem;
     font-weight: 750;
@@ -928,13 +912,48 @@
 /* Cuerpo de texto informativo del formulario */
 
 #txt2-sect-subs {
-    position: absolute;
-    display: flex;
-    align-items: center;
-
-    top: 65%;
-    right: 35.3%;
-    transform: translate( -50%, -50%);
-
     font-size: 1.2rem;
+    color: #6D6D6D;
+}
+
+/* Responsive sección suscribirse */
+
+@media (max-width: 900px) {
+
+    #title-subs {
+        font-size: clamp(3.5rem, 6vw, 5.5rem);
+    }
+
+    #txt1-sect-subs {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 600px) {
+
+    #sect-subs {
+        padding: 3.5rem 1.5rem;
+        gap: 1rem;
+    }
+
+    #title-subs {
+        font-size: clamp(2.5rem, 9vw, 3.8rem);
+    }
+
+    #txt1-sect-subs {
+        font-size: 1.1rem;
+    }
+
+    #form-subs {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #email-subs {
+        width: 100%;
+    }
+
+    #btn-subs {
+        width: 100%;
+    }
 }
