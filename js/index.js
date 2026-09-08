@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         btn.addEventListener("click", () => {
             addToCart(product);
-            window.location.href = "HTML/shopping-cart.html";
+            window.location.href = "html/shopping-cart.html";
         });
     });
 });

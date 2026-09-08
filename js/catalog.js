@@ -1,70 +1,99 @@
 import { getClothingProducts } from "./api.js";
 import { renderProducts } from "./ui.js";
+import { filterByText, sortByPrice } from "./filters.js";
 
 let allProducts = [];
-let filteredProducts = [];
+
+const state = {
+    searchText: "",
+    category: null,
+    sortOrder: null
+};
+
+const CATEGORY_MAP = {
+    "hombre": "men's clothing",
+    "mujer": "women's clothing"
+};
 
 document.addEventListener("DOMContentLoaded", async () => {
     allProducts = await getClothingProducts();
-    filteredProducts = [...allProducts];
 
     const cards = document.querySelectorAll(".cards-pag-collect");
-    renderProducts(filteredProducts, cards);
+    applyFiltersAndRender(cards);
 
     setupSearch(cards);
-    setupFilters(cards);
+    setupSortSelect(cards);
     setupCategories(cards);
 });
+
+/* Combina los tres filtros del estado sobre allProducts */
+function getFilteredProducts() {
+    let result = [...allProducts];
+
+    if (state.category) {
+        result = result.filter(p => p.category === state.category);
+    }
+
+    if (state.searchText) {
+        result = filterByText(result, state.searchText);
+    }
+
+    if (state.sortOrder === "asc" || state.sortOrder === "desc") {
+        result = sortByPrice(result, state.sortOrder);
+    } else if (state.sortOrder === "newest") {
+        result = [...result].sort((a, b) => b.id - a.id);
+    }
+
+    return result;
+}
+
+function applyFiltersAndRender(cards) {
+    renderProducts(getFilteredProducts(), cards);
+}
 
 /* Buscador */
 function setupSearch(cards) {
     const input = document.querySelector('input[type="search"]');
 
     input.addEventListener("input", () => {
-        const value = input.value.toLowerCase();
-        filteredProducts = allProducts.filter(p =>
-            p.title.toLowerCase().includes(value)
-        );
-        renderProducts(filteredProducts, cards);
+        state.searchText = input.value;
+        applyFiltersAndRender(cards);
     });
 }
 
-/* Filtros */
-function setupFilters(cards) {
-    const select = document.querySelector(".search-filter");
+/* Filtro de ordenamiento (desplegable) */
+function setupSortSelect(cards) {
+    const select = document.querySelector("select.search-filter");
 
     select.addEventListener("change", () => {
         if (select.value === "precio-mayor") {
-            filteredProducts.sort((a, b) => b.price - a.price);
-        }
-        if (select.value === "precio-menor") {
-            filteredProducts.sort((a, b) => a.price - b.price);
-        }
-        if (select.value === "nuevos") {
-            filteredProducts.sort((a, b) => b.id - a.id);
+            state.sortOrder = "desc";
+        } else if (select.value === "precio-menor") {
+            state.sortOrder = "asc";
+        } else if (select.value === "nuevos") {
+            state.sortOrder = "newest";
+        } else {
+            state.sortOrder = null;
         }
 
-        renderProducts(filteredProducts, cards);
+        applyFiltersAndRender(cards);
     });
 }
 
-/* Categorias */
+/* Categorías: estado visual (.active) y filtrado en un solo lugar */
 function setupCategories(cards) {
     const buttons = document.querySelectorAll(".catg-collect");
 
     buttons.forEach(btn => {
         btn.addEventListener("click", () => {
-            const category = btn.textContent.toLowerCase();
 
-            if (category === "todos") {
-                filteredProducts = [...allProducts];
-            } else {
-                filteredProducts = allProducts.filter(p =>
-                    p.category.toLowerCase().includes(category)
-                );
-            }
+            buttons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
 
-            renderProducts(filteredProducts, cards);
+            const label = btn.textContent.trim().toLowerCase();
+            state.category = label === "todos" ? null : (CATEGORY_MAP[label] || null);
+
+            applyFiltersAndRender(cards);
         });
     });
 }

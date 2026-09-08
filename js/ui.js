@@ -4,7 +4,13 @@ export function renderProducts(products, cards) {
 
     cards.forEach((card, index) => {
         const product = products[index];
-        if (!product) return;
+
+        if (!product) {
+            card.style.display = "none";
+            return;
+        }
+
+        card.style.display = "";
 
         const imgContainer = card.querySelector(".img-card-collect");
         imgContainer.style.backgroundImage = `url(${product.image})`;
@@ -23,7 +29,7 @@ export function renderProducts(products, cards) {
 
         newBtn.addEventListener("click", () => {
             addToCart(product);
-            window.location.href = "../HTML/shopping-cart.html";
+            window.location.href = "../html/shopping-cart.html";
         });
     });
 }
