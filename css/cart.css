@@ -114,6 +114,7 @@
 .cart-price small {
     color: #6D6D6D;
     font-size: 0.75rem;
+    text-decoration: line-through;
 }
 
 #cart-summary {

@@ -36,6 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const article = document.createElement("article");
             article.classList.add("cart-card");
 
+            const originalLineTotal = product.onSale
+                ? (product.originalPrice * product.quantity).toFixed(2)
+                : null;
+
             article.innerHTML = `
                 <div class="img-cart">
                     <img src="${product.image}" alt="${product.title}" class="prd-img">
@@ -57,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <strong class="price-prd">
                         $${(product.price * product.quantity).toFixed(2)}
                     </strong>
-                    <small>$${(product.price * product.quantity).toFixed(2)}</small>
+                    ${originalLineTotal ? `<small>$${originalLineTotal}</small>` : ""}
                 </div>
             `;
 
