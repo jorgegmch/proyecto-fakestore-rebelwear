@@ -33,6 +33,11 @@
     font-size: 1.3rem;
 }
 
+.cart-empty {
+    color: #6D6D6D;
+    font-size: 1.3rem;
+}
+
 .cart-card {
     display: grid;
     grid-template-columns: 120px 1fr auto;

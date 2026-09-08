@@ -8,13 +8,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const envioEl = document.getElementById("val-env");
     const totalEl = document.getElementById("val-total");
 
-    const SHIPPING_COST = 150;
+    const SHIPPING_COST = 15;
+    const FREE_SHIPPING_THRESHOLD = 200;
 
     let cart = getCart();
 
     function renderCart() {
 
-        cartSection.querySelectorAll(".cart-card").forEach(card => card.remove());
+        cartSection.querySelectorAll(".cart-card, .cart-empty").forEach(el => el.remove());
+
+        if (!cart.length) {
+            const emptyMsg = document.createElement("p");
+            emptyMsg.classList.add("cart-empty");
+            emptyMsg.textContent = "Tu carrito está vacío.";
+            cartSection.appendChild(emptyMsg);
+            updateSummary();
+            return;
+        }
 
         cart.forEach(product => {
 
@@ -46,13 +56,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             `;
 
-// Aumentar cantidad
+            // Aumentar cantidad
             article.querySelector(".mas").addEventListener("click", () => {
                 product.quantity++;
                 updateCart();
             });
 
-//  Disminuir cantidad
+            // Disminuir cantidad
             article.querySelector(".menos").addEventListener("click", () => {
                 if (product.quantity > 1) {
                     product.quantity--;
@@ -62,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 updateCart();
             });
 
-// Eliminar producto
+            // Eliminar producto
             article.querySelector(".delete-product").addEventListener("click", () => {
                 cart = cart.filter(item => item.id !== product.id);
                 updateCart();
@@ -80,9 +90,14 @@ document.addEventListener("DOMContentLoaded", () => {
             0
         );
 
+        const freeShipping = subtotal >= FREE_SHIPPING_THRESHOLD;
+        const shipping = !cart.length ? 0 : (freeShipping ? 0 : SHIPPING_COST);
+
         subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
-        envioEl.textContent = `$${cart.length ? SHIPPING_COST : 0}`;
-        totalEl.textContent = `$${cart.length ? (subtotal + SHIPPING_COST).toFixed(2) : 0}`;
+        envioEl.textContent = !cart.length
+            ? "$0.00"
+            : (freeShipping ? "Envío gratis" : `$${shipping.toFixed(2)}`);
+        totalEl.textContent = `$${(subtotal + shipping).toFixed(2)}`;
     }
 
     function updateCart() {
