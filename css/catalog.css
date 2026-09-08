@@ -337,32 +337,3 @@
     font-weight: 500;
     color: #6D6D6D;
 }
-
-/* Paginación dinámica del catálogo */
-
-.pagination-controls {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-
-    padding: 3rem 0;
-    background-color: #000000;
-}
-
-.pagination-btn {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #FFFFFF;
-
-    background-color: #000000;
-    border: 2px solid #DD0000;
-    border-radius: 2rem;
-    padding: 0.6rem 1.8rem;
-
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.pagination-btn:hover {
-    background-color: #DD0000;
-}
