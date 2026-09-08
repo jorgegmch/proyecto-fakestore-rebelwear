@@ -1,12 +1,13 @@
 import { getClothingProducts } from "./api.js";
 import { addToCart } from "./cart.js";
+import { setBackgroundImage } from "./dom-helpers.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 
     const products = await getClothingProducts();
     if (!products.length) return;
 
-// Destacados
+    // Destacados
     const featuredContainers = document.querySelectorAll(
         "#sect-destacado .producto-dest"
     );
@@ -15,12 +16,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         const container = featuredContainers[index];
         if (!container) return;
 
-        container.style.backgroundImage = `url(${product.image})`;
-        container.style.backgroundSize = "cover";
-        container.style.backgroundPosition = "center";
+        setBackgroundImage(container, product.image);
     });
 
-// Preview colección
+    // Preview colección
     const previewCards = document.querySelectorAll("#preview-coleccion article");
 
     products.slice(0, 6).forEach((product, index) => {
@@ -32,12 +31,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         const price = card.querySelector(".precio-producto-prev");
         const btn = card.querySelector(".btn-add-prev");
 
-        image.style.backgroundImage = `url(${product.image})`;
-        image.style.backgroundSize = "cover";
-        image.style.backgroundPosition = "center";
+        setBackgroundImage(image, product.image);
 
         title.textContent = product.title;
-        price.textContent = `$ ${product.price.toFixed(2)}`;
+        price.textContent = `$${product.price.toFixed(2)}`;
 
         btn.addEventListener("click", () => {
             addToCart(product);

@@ -1,4 +1,5 @@
 import { addToCart } from "./cart.js";
+import { setBackgroundImage } from "./dom-helpers.js";
 
 export function renderProducts(products, cards) {
 
@@ -13,14 +14,12 @@ export function renderProducts(products, cards) {
         card.style.display = "";
 
         const imgContainer = card.querySelector(".img-card-collect");
-        imgContainer.style.backgroundImage = `url(${product.image})`;
-        imgContainer.style.backgroundSize = "cover";
-        imgContainer.style.backgroundPosition = "center";
+        setBackgroundImage(imgContainer, product.image);
 
         card.querySelector(".name-prod-collect").textContent = product.title;
 
         card.querySelector(".price-prod-collect").textContent =
-            `$ ${product.price.toFixed(2)}`;
+            `$${product.price.toFixed(2)}`;
 
         const btn = card.querySelector(".btn-add-collect");
 
