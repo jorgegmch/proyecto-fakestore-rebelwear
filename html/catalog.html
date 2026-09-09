@@ -53,6 +53,11 @@
                 <option value="precio-menor">Precio menor a mayor</option>
                 <option value="nuevos">Más nuevos</option>
             </select>
+            <select id="mobile-category-filter" class="search-filter" aria-label="Filtrar por categoría">
+                <option value="todos">Todos</option>
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
+            </select>
             <input type="search" name="q" placeholder="¿Qué estás buscando?" class="search-filter">
         </form>
         <article id="catg-pag-collect">
@@ -66,115 +71,116 @@
                 <button class="catg-collect">Mujer</button>
             </div>
         </article>
-        <article class="cards-pag-collect" id="card-1">
-            <h2 class="product-badge"></h2>
-            <div class="img-card-collect"></div>
-            <div class="body-card">
-                <button class="btn-add-collect"><img src="../img/png/icons/catalog-page/cart-pag-colecc.png" alt="Carrito Icono" class="cart-add-collect">Agregar</button>
+        <div id="catalog-products">
+            <article class="cards-pag-collect" id="card-1">
+                <div class="img-card-wrap">
+                    <h2 class="product-badge"></h2>
+                    <div class="img-card-collect"></div>
+                    <button class="btn-add-collect"><img src="../img/png/icons/catalog-page/cart-pag-colecc.png" alt="Carrito Icono" class="cart-add-collect">Agregar</button>
+                </div>
                 <div class="info-card-collect">
                     <h3 class="name-prod-collect"></h3>
                     <p class="price-prod-collect"></p>
                     <p class="crossed-out-price"></p>
                 </div>
-            </div>
-        </article>
-        <article class="cards-pag-collect" id="card-2">
-            <h2 class="product-badge"></h2>
-            <div class="img-card-collect"></div>
-            <div class="body-card">
-                <button class="btn-add-collect"><img src="../img/png/icons/catalog-page/cart-pag-colecc.png" alt="Carrito Icono" class="cart-add-collect">Agregar</button>
+            </article>
+            <article class="cards-pag-collect" id="card-2">
+                <div class="img-card-wrap">
+                    <h2 class="product-badge"></h2>
+                    <div class="img-card-collect"></div>
+                    <button class="btn-add-collect"><img src="../img/png/icons/catalog-page/cart-pag-colecc.png" alt="Carrito Icono" class="cart-add-collect">Agregar</button>
+                </div>
                 <div class="info-card-collect">
                     <h3 class="name-prod-collect"></h3>
                     <p class="price-prod-collect"></p>
                     <p class="crossed-out-price"></p>
                 </div>
-            </div>
-        </article>
-        <article class="cards-pag-collect" id="card-3">
-            <h2 class="product-badge"></h2>
-            <div class="img-card-collect"></div>
-            <div class="body-card">
-                <button class="btn-add-collect"><img src="../img/png/icons/catalog-page/cart-pag-colecc.png" alt="Carrito Icono" class="cart-add-collect">Agregar</button>
+            </article>
+            <article class="cards-pag-collect" id="card-3">
+                <div class="img-card-wrap">
+                    <h2 class="product-badge"></h2>
+                    <div class="img-card-collect"></div>
+                    <button class="btn-add-collect"><img src="../img/png/icons/catalog-page/cart-pag-colecc.png" alt="Carrito Icono" class="cart-add-collect">Agregar</button>
+                </div>
                 <div class="info-card-collect">
                     <h3 class="name-prod-collect"></h3>
                     <p class="price-prod-collect"></p>
                     <p class="crossed-out-price"></p>
                 </div>
-            </div>
-
-        </article>
-        <article class="cards-pag-collect" id="card-4">
-            <h2 class="product-badge"></h2>
-            <div class="img-card-collect"></div>
-            <div class="body-card">
-                <button class="btn-add-collect"><img src="../img/png/icons/catalog-page/cart-pag-colecc.png" alt="Carrito Icono" class="cart-add-collect">Agregar</button>
+            </article>
+            <article class="cards-pag-collect" id="card-4">
+                <div class="img-card-wrap">
+                    <h2 class="product-badge"></h2>
+                    <div class="img-card-collect"></div>
+                    <button class="btn-add-collect"><img src="../img/png/icons/catalog-page/cart-pag-colecc.png" alt="Carrito Icono" class="cart-add-collect">Agregar</button>
+                </div>
                 <div class="info-card-collect">
                     <h3 class="name-prod-collect"></h3>
                     <p class="price-prod-collect"></p>
                     <p class="crossed-out-price"></p>
                 </div>
-            </div>
-        </article>
-        <article class="cards-pag-collect" id="card-5">
-            <h2 class="product-badge"></h2>
-            <div class="img-card-collect"></div>
-            <div class="body-card">
-                <button class="btn-add-collect"><img src="../img/png/icons/catalog-page/cart-pag-colecc.png" alt="Carrito Icono" class="cart-add-collect">Agregar</button>
+            </article>
+            <article class="cards-pag-collect" id="card-5">
+                <div class="img-card-wrap">
+                    <h2 class="product-badge"></h2>
+                    <div class="img-card-collect"></div>
+                    <button class="btn-add-collect"><img src="../img/png/icons/catalog-page/cart-pag-colecc.png" alt="Carrito Icono" class="cart-add-collect">Agregar</button>
+                </div>
                 <div class="info-card-collect">
                     <h3 class="name-prod-collect"></h3>
                     <p class="price-prod-collect"></p>
                     <p class="crossed-out-price"></p>
                 </div>
-            </div>
-        </article>
-        <article class="cards-pag-collect" id="card-6">
-            <h2 class="product-badge"></h2>
-            <div class="img-card-collect"></div>
-            <div class="body-card">
-                <button class="btn-add-collect"><img src="../img/png/icons/catalog-page/cart-pag-colecc.png" alt="Carrito Icono" class="cart-add-collect">Agregar</button>
+            </article>
+            <article class="cards-pag-collect" id="card-6">
+                <div class="img-card-wrap">
+                    <h2 class="product-badge"></h2>
+                    <div class="img-card-collect"></div>
+                    <button class="btn-add-collect"><img src="../img/png/icons/catalog-page/cart-pag-colecc.png" alt="Carrito Icono" class="cart-add-collect">Agregar</button>
+                </div>
                 <div class="info-card-collect">
                     <h3 class="name-prod-collect"></h3>
                     <p class="price-prod-collect"></p>
                     <p class="crossed-out-price"></p>
                 </div>
-            </div>
-        </article>
-        <article class="cards-pag-collect" id="card-7">
-            <h2 class="product-badge"></h2>
-            <div class="img-card-collect"></div>
-            <div class="body-card">
-                <button class="btn-add-collect"><img src="../img/png/icons/catalog-page/cart-pag-colecc.png" alt="Carrito Icono" class="cart-add-collect">Agregar</button>
+            </article>
+            <article class="cards-pag-collect" id="card-7">
+                <div class="img-card-wrap">
+                    <h2 class="product-badge"></h2>
+                    <div class="img-card-collect"></div>
+                    <button class="btn-add-collect"><img src="../img/png/icons/catalog-page/cart-pag-colecc.png" alt="Carrito Icono" class="cart-add-collect">Agregar</button>
+                </div>
                 <div class="info-card-collect">
                     <h3 class="name-prod-collect"></h3>
                     <p class="price-prod-collect"></p>
                     <p class="crossed-out-price"></p>
                 </div>
-            </div>
-        </article>
-        <article class="cards-pag-collect" id="card-8">
-            <h2 class="product-badge"></h2>
-            <div class="img-card-collect"></div>
-            <div class="body-card">
-                <button class="btn-add-collect"><img src="../img/png/icons/catalog-page/cart-pag-colecc.png" alt="Carrito Icono" class="cart-add-collect">Agregar</button>
+            </article>
+            <article class="cards-pag-collect" id="card-8">
+                <div class="img-card-wrap">
+                    <h2 class="product-badge"></h2>
+                    <div class="img-card-collect"></div>
+                    <button class="btn-add-collect"><img src="../img/png/icons/catalog-page/cart-pag-colecc.png" alt="Carrito Icono" class="cart-add-collect">Agregar</button>
+                </div>
                 <div class="info-card-collect">
                     <h3 class="name-prod-collect"></h3>
                     <p class="price-prod-collect"></p>
                     <p class="crossed-out-price"></p>
                 </div>
-            </div>
-        </article>
-        <article class="cards-pag-collect" id="card-9">
-            <h2 class="product-badge"></h2>
-            <div class="img-card-collect"></div>
-            <div class="body-card">
-                <button class="btn-add-collect"><img src="../img/png/icons/catalog-page/cart-pag-colecc.png" alt="Carrito Icono" class="cart-add-collect">Agregar</button>
+            </article>
+            <article class="cards-pag-collect" id="card-9">
+                <div class="img-card-wrap">
+                    <h2 class="product-badge"></h2>
+                    <div class="img-card-collect"></div>
+                    <button class="btn-add-collect"><img src="../img/png/icons/catalog-page/cart-pag-colecc.png" alt="Carrito Icono" class="cart-add-collect">Agregar</button>
+                </div>
                 <div class="info-card-collect">
                     <h3 class="name-prod-collect"></h3>
                     <p class="price-prod-collect"></p>
                     <p class="crossed-out-price"></p>
                 </div>
-            </div>
-        </article>
+            </article>
+        </div>
     </main>
 
     <div id="pagination-controls" class="pagination-controls">

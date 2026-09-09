@@ -7,10 +7,10 @@
     display: block;
 
     background-color: #000000;
-    padding: 0 2rem;
+    padding: clamp(2rem, 6vw, 4rem) clamp(1.2rem, 5vw, 3rem) clamp(1.5rem, 4vw, 2rem);
 
     min-height: 22vh;
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -18,8 +18,11 @@
 
 #title-catalog {
     color: #FFFFFF;
-    font-size: 5rem;
+    font-size: clamp(1.4rem, 6vw, 5rem);
     font-weight: 800;
+    line-height: 1.1;
+    white-space: nowrap;
+    margin: 0;
 }
 
 #red-font-catalog {
@@ -28,23 +31,29 @@
 
 #txt-subtitle-catalog {
     color: #FFFFFF;
-    font-size: 2rem;
-    margin-top: -3rem;
+    font-size: clamp(1.1rem, 2.5vw, 2rem);
+    margin-top: 0.5rem;
 }
 
 /* MAIN */
 
+/* grid-template-areas en vez de posiciones manuales por tarjeta:
+   así el sidebar y el grid de productos reflowean solos al angostar
+   la pantalla, sin tener que reacomodar nada a mano por breakpoint */
+
 #main-catalog {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: auto;
-    gap: 1rem;
-    padding-left: 2rem;
-    padding-right: 3rem;
+    grid-template-columns: minmax(220px, 18rem) 1fr;
+    grid-template-areas:
+        "search  search"
+        "sidebar products";
+    align-items: start;
+    gap: 2rem;
+
+    padding: 2rem 3rem 3rem;
 
     background-color: #000000;
     border-bottom: 2px solid #DD0000;
-    height: auto;
     width: 100%;
     overflow: hidden;
 }
@@ -52,36 +61,45 @@
 /* Formulario de busqueda */
 
 #form-collect {
+    grid-area: search;
     display: flex;
     gap: 1rem;
-    grid-column: span 4;
     flex-direction: row-reverse;
+    flex-wrap: wrap;
 
     align-items: center;
-    
-    height: 10vh;
+
+    height: auto;
     width: auto;
 }
 
 .search-filter {
-    font-size: 1.5vh;
+    font-size: 1rem;
     color: #FFFFFF;
     background-color: #000000;
     border: 1px solid #FFFFFF;
 
-    height: 2rem;
+    height: 2.5rem;
     width: 15rem;
+    max-width: 100%;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+}
+
+/* Select de categorías para pantallas chicas: mismo estilo que el
+   de ordenar, oculto por defecto, se muestra en el breakpoint donde
+   el sidebar de botones se esconde */
+
+#mobile-category-filter {
+    display: none;
 }
 
 /* Categorias de la página de colecciones */
 
 #catg-pag-collect {
-    grid-row: span 4;
-    justify-self: start;
-    width: 18rem;
-    height: 22rem;
+    grid-area: sidebar;
+    width: 100%;
+    height: auto;
 }
 
 /* Título de la página de categorías */
@@ -138,18 +156,36 @@
     border-left: 3px solid #DD0000;
 }
 
-/* Productos de la pagina de colecciones */
+/* Grid de productos: contenedor propio (antes las 9 tarjetas eran
+   hermanas sueltas del sidebar dentro del mismo grid, con posición
+   manual por tarjeta) */
+
+#catalog-products {
+    grid-area: products;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+/* Tarjetas de producto: mismo patrón que .prev-img-wrap /
+   .etq-prev-prodt del preview de home (imagen con aspect-ratio
+   propio, botón overlay abajo-derecha, info en flujo normal debajo) */
 
 .cards-pag-collect {
     display: flex;
-    position: relative;
+    flex-direction: column;
+    width: 100%;
 
     background-color: #6D6D6D;
-    width: 31rem;
-    height: 36rem;
-
     overflow: hidden;
-    z-index: 0;
+}
+
+.img-card-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    flex-shrink: 0;
+    overflow: hidden;
 }
 
 .img-card-collect {
@@ -164,36 +200,31 @@
     z-index: 1;
 }
 
-.body-card {
-    display: grid;
-    position: relative;
-    
-    grid-template-rows: repeat(2, 1fr);
-    grid-auto-columns: auto;
-    justify-self: start;
-
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    z-index: 2;
+.img-card-collect:hover {
+    transform: scale(1.05);
 }
 
 .btn-add-collect {
+    position: absolute;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
 
-    grid-row: 1;
+    bottom: 1rem;
+    right: 1rem;
+
     border: none;
     background-color: #DD0000;
     color: #FFFFFF;
-    font-size: 1.3rem;
-    font-weight: 500;
+    white-space: nowrap;
 
-    height: 3rem;
-    width: 8.5rem;
-    overflow: hidden;
+    font-size: clamp(0.9rem, 1.4vw, 1.3rem);
+    font-weight: 500;
+    padding: clamp(0.4rem, 1vw, 0.6rem) clamp(0.7rem, 1.6vw, 1.2rem);
+
     transition: transform 0.4s ease;
+    z-index: 2;
 }
 
 .btn-add-collect:hover {
@@ -201,103 +232,54 @@
 }
 
 .cart-add-collect {
-    height: 2rem;
+    height: clamp(1.2rem, 1.8vw, 2rem);
     width: auto;
 }
 
 .info-card-collect {
-    display: grid;
-    align-self: end;
-    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 0.4rem;
 
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    justify-self: start;
-
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 50%;
+    padding: 1rem;
     width: 100%;
     background-color: #1B1B1B;
     overflow: hidden;
 }
 
 .name-prod-collect {
-    grid-column: span 2;
     color: #FFFFFF;
-    font-size: 1.8rem;
-    margin-top: 1rem;
+    font-size: clamp(1.1rem, 1.6vw, 1.8rem);
+    line-height: 1.3;
+    margin: 0;
+
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .price-prod-collect {
-    grid-column: 1;
-    grid-row: 2;
-
     color: #DD0000;
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 1.4vw, 1.5rem);
     font-weight: 700;
-
-    margin-top: -1rem;
+    text-align: right;
+    margin: 0;
 }
 
 .crossed-out-price {
-    grid-column: 2;
-    grid-row: 3;
-
     color: #FFFFFF;
-    font-size: 1.2rem;
+    font-size: clamp(0.9rem, 1.1vw, 1.2rem);
     font-weight: 500;
     text-align: right;
     text-decoration: line-through;
-
-    margin-top: -1rem;
+    margin: 0;
 }
 
-/* Oraganización del grid */
-
-#card-1 {
-    grid-column: 2;
-    grid-row: 2;
-}
-
-#card-2 {
-    grid-column: 3;
-    grid-row: 2;
-}
-
-#card-3 {
-    grid-column: 4;
-    grid-row: 2;
-}
-
-#card-4 {
-    grid-column: 2;
-    grid-row: 3;
-}
-
-#card-5 {
-    grid-column: 3;
-    grid-row: 3;
-}
-
-#card-6 {
-    grid-column: 4;
-    grid-row: 3;
-}
-
-#card-7 {
-    grid-column: 2;
-    grid-row: 4;
-}
-
-#card-8 {
-    grid-column: 3;
-    grid-row: 4;
-}
-
-#card-9 {
-    grid-column: 4;
-    grid-row: 4;
+.crossed-out-price:empty {
+    display: none;
 }
 
 /* Controles de paginación */
@@ -306,23 +288,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    flex-wrap: nowrap;
+    gap: clamp(0.6rem, 2vw, 1.5rem);
 
-    padding: 2rem 0;
+    padding: 2rem 1rem;
     background-color: #000000;
     border-bottom: 2px solid #DD0000;
 }
 
 .pagination-btn {
-    font-size: 1.3rem;
+    font-size: clamp(0.85rem, 2vw, 1.3rem);
     font-weight: 600;
     color: #FFFFFF;
+    white-space: nowrap;
 
     background-color: #000000;
     border: 2px solid #DD0000;
     border-radius: 999px;
 
-    padding: 0.6rem 1.8rem;
+    padding: clamp(0.4rem, 1.4vw, 0.6rem) clamp(0.9rem, 3vw, 1.8rem);
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -336,4 +320,66 @@
     font-size: 1.2rem;
     font-weight: 500;
     color: #6D6D6D;
+}
+
+/* Responsive: sidebar + 3 columnas empieza a sentirse apretado
+   antes de llegar al punto donde conviene esconder el sidebar */
+
+@media (max-width: 1100px) {
+
+    #catalog-products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* A partir de acá el sidebar de categorías se esconde y aparece el
+   select de categorías para mobile, al lado del de ordenar */
+
+@media (max-width: 900px) {
+
+    #main-catalog {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "search"
+            "products";
+        padding: 1.5rem 1.5rem 2rem;
+        gap: 1.5rem;
+    }
+
+    #catg-pag-collect {
+        display: none;
+    }
+
+    #mobile-category-filter {
+        display: block;
+    }
+
+    #form-collect {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-filter,
+    #mobile-category-filter {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+
+    #catalog-products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    #main-catalog {
+        padding: 1.2rem 1rem 1.5rem;
+    }
+
+    #catalog-products {
+        grid-template-columns: 1fr;
+    }
 }

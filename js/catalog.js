@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     setupSearch(cards);
     setupSortSelect(cards);
     setupCategories(cards);
+    setupMobileCategorySelect(cards);
     setupPagination(cards);
 });
 
@@ -118,9 +119,12 @@ function setupSortSelect(cards) {
     });
 }
 
-/* Categorías: estado visual (.active) y filtrado en un solo lugar */
+/* Categorías (botones de desktop): estado visual (.active) y
+   filtrado en un solo lugar. Además mantiene el select de mobile
+   sincronizado, para que ambos controles siempre muestren lo mismo */
 function setupCategories(cards) {
     const buttons = document.querySelectorAll(".catg-collect");
+    const mobileSelect = document.getElementById("mobile-category-filter");
 
     buttons.forEach(btn => {
         btn.addEventListener("click", () => {
@@ -131,9 +135,31 @@ function setupCategories(cards) {
             const label = btn.textContent.trim().toLowerCase();
             state.category = label === "todos" ? null : (CATEGORY_MAP[label] || null);
 
+            if (mobileSelect) mobileSelect.value = label;
+
             state.currentPage = 1;
             applyFiltersAndRender(cards);
         });
+    });
+}
+
+/* Categorías (select de mobile): misma lógica de filtrado que los
+   botones, y sincroniza el estado .active de los botones por si el
+   usuario cambia de ancho de pantalla sin recargar */
+function setupMobileCategorySelect(cards) {
+    const select = document.getElementById("mobile-category-filter");
+    if (!select) return;
+
+    select.addEventListener("change", () => {
+        const label = select.value;
+        state.category = label === "todos" ? null : (CATEGORY_MAP[label] || null);
+
+        document.querySelectorAll(".catg-collect").forEach(btn => {
+            btn.classList.toggle("active", btn.textContent.trim().toLowerCase() === label);
+        });
+
+        state.currentPage = 1;
+        applyFiltersAndRender(cards);
     });
 }
 
