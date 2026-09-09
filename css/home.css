@@ -213,11 +213,7 @@
     }
 }
 
-/* Rango que faltaba entre el breakpoint de tablet (1024) y el de
-   mobile (430): acá es donde el nav ya pasa a hamburguesa pero el
-   header seguía usando los valores de desktop (h1 en 10rem, badge
-   en ancho fijo), lo que desbordaba el titular y montaba el badge
-   sobre las métricas. */
+/* Breakpoint intermedio entre tablet y mobile */
 
 @media (max-width: 1023px) and (min-width: 431px) {
 
@@ -241,9 +237,7 @@
         font-size: clamp(1.1rem, 2vw, 1.4rem);
     }
 
-    /* Cuerpo bot header: el margin-top negativo ya no es un número
-       fijo pensado para el ancho de diseño original, se achica en
-       este tramo para que no le pise las métricas de arriba */
+    /* Cuerpo bot header */
     #bot-header-index {
         padding: 2.5rem 2rem;
         margin-top: -5rem;
@@ -267,8 +261,7 @@
         line-height: 1.5;
     }
 
-    /* Botones: font-size y padding en clamp() para que el texto
-       nunca necesite partirse en 2 líneas, incluso cerca de los 431px */
+    /* Botones */
     #btns-header-index {
         gap: clamp(0.6rem, 1.5vw, 1.2rem);
         margin-top: 1.5rem;
@@ -399,12 +392,7 @@
     margin-top: 0;
 }
 
-/* El piso de 2.5rem de arriba deja de bajar por debajo de ~571px
-   de ancho (7vw ya no alcanza ese mínimo), así que el título se
-   queda pegado en ese tamaño sin importar cuánto se siga angostando
-   la pantalla, y termina desbordándose a 2 líneas. Bajamos el piso
-   acá para que "COLECCIÓN COMPLETA" / "COLECCIÓN URBANA" / "ÚNETE
-   AL MOVIMIENTO" sigan cabiendo en una sola línea. */
+/* Título más chico en mobile para que no se parta en 2 líneas */
 
 @media (max-width: 600px) {
 
@@ -734,10 +722,7 @@
     margin-top: 1rem;
 }
 
-/* En pantallas chicas el margin-top de 1rem de arriba (pensado para
-   cuando el título mide 7rem) se nota de más al lado de un título ya
-   achicado a 2rem. Se anula acá para igualar la separación que ya
-   tiene #titulo-dest (0, por la base de .titulo-sect) */
+/* Menos separación con el subtítulo en mobile */
 
 @media (max-width: 600px) {
 

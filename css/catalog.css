@@ -37,10 +37,6 @@
 
 /* MAIN */
 
-/* grid-template-areas en vez de posiciones manuales por tarjeta:
-   así el sidebar y el grid de productos reflowean solos al angostar
-   la pantalla, sin tener que reacomodar nada a mano por breakpoint */
-
 #main-catalog {
     display: grid;
     grid-template-columns: minmax(220px, 18rem) 1fr;
@@ -86,9 +82,7 @@
     padding-right: 0.5rem;
 }
 
-/* Select de categorías para pantallas chicas: mismo estilo que el
-   de ordenar, oculto por defecto, se muestra en el breakpoint donde
-   el sidebar de botones se esconde */
+/* Select de categorías para mobile */
 
 #mobile-category-filter {
     display: none;
@@ -156,9 +150,7 @@
     border-left: 3px solid #DD0000;
 }
 
-/* Grid de productos: contenedor propio (antes las 9 tarjetas eran
-   hermanas sueltas del sidebar dentro del mismo grid, con posición
-   manual por tarjeta) */
+/* Grid de productos */
 
 #catalog-products {
     grid-area: products;
@@ -167,9 +159,7 @@
     gap: 1.5rem;
 }
 
-/* Tarjetas de producto: mismo patrón que .prev-img-wrap /
-   .etq-prev-prodt del preview de home (imagen con aspect-ratio
-   propio, botón overlay abajo-derecha, info en flujo normal debajo) */
+/* Tarjetas: mismo patrón que el preview de home */
 
 .cards-pag-collect {
     display: flex;
@@ -322,9 +312,6 @@
     color: #6D6D6D;
 }
 
-/* Responsive: sidebar + 3 columnas empieza a sentirse apretado
-   antes de llegar al punto donde conviene esconder el sidebar */
-
 @media (max-width: 1100px) {
 
     #catalog-products {
@@ -332,8 +319,7 @@
     }
 }
 
-/* A partir de acá el sidebar de categorías se esconde y aparece el
-   select de categorías para mobile, al lado del de ordenar */
+/* Se esconde el sidebar de categorías y aparece el select mobile */
 
 @media (max-width: 900px) {
 
