@@ -399,6 +399,20 @@
     margin-top: 0;
 }
 
+/* El piso de 2.5rem de arriba deja de bajar por debajo de ~571px
+   de ancho (7vw ya no alcanza ese mínimo), así que el título se
+   queda pegado en ese tamaño sin importar cuánto se siga angostando
+   la pantalla, y termina desbordándose a 2 líneas. Bajamos el piso
+   acá para que "COLECCIÓN COMPLETA" / "COLECCIÓN URBANA" / "ÚNETE
+   AL MOVIMIENTO" sigan cabiendo en una sola línea. */
+
+@media (max-width: 600px) {
+
+    .titulo-sect {
+        font-size: 2rem;
+    }
+}
+
 .red-font {
     color: #DD0000;
 }
@@ -718,6 +732,18 @@
 
 #titulo-prev {
     margin-top: 1rem;
+}
+
+/* En pantallas chicas el margin-top de 1rem de arriba (pensado para
+   cuando el título mide 7rem) se nota de más al lado de un título ya
+   achicado a 2rem. Se anula acá para igualar la separación que ya
+   tiene #titulo-dest (0, por la base de .titulo-sect) */
+
+@media (max-width: 600px) {
+
+    #titulo-prev {
+        margin-top: 0;
+    }
 }
 
 #txt-sect-preview {
