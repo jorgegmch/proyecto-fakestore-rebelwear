@@ -337,6 +337,10 @@
 
 @media (max-width: 900px) {
 
+    #header-catalog {
+        min-height: 0;
+    }
+
     #main-catalog {
         grid-template-columns: 1fr;
         grid-template-areas:
