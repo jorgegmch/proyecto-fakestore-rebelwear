@@ -426,6 +426,18 @@
     margin-bottom: clamp(2rem, 5vw, 4rem);
 }
 
+@media (max-width: 600px) {
+
+    #subtitle-dest {
+        font-size: 1.4rem;
+    }
+
+    #titulo-dest {
+        font-size: 1.8rem;
+        white-space: nowrap;
+    }
+}
+
 /* Collage de imágenes: dest-item-1 ocupa las 2 filas, así siempre
    queda tan alta como las otras dos apiladas + el espacio entre
    ellas, sin necesidad de calcular nada a mano */
@@ -726,8 +738,15 @@
 
 @media (max-width: 600px) {
 
+    #subtitle-prev {
+        font-size: 1.4rem;
+        white-space: nowrap;
+    }
+
     #titulo-prev {
+        font-size: 1.8rem;
         margin-top: 0;
+        white-space: nowrap;
     }
 }
 
