@@ -924,9 +924,9 @@
 @media (max-width: 600px) {
 
     #preview-coleccion {
-        grid-template-columns: 1fr;
-        padding: 3rem 1.25rem;
-        gap: 1.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 3rem 1rem;
+        gap: 1rem;
     }
 
     #txt-sect-preview {
