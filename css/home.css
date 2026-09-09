@@ -438,10 +438,6 @@
     }
 }
 
-/* Collage de imágenes: dest-item-1 ocupa las 2 filas, así siempre
-   queda tan alta como las otras dos apiladas + el espacio entre
-   ellas, sin necesidad de calcular nada a mano */
-
 .dest-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -506,11 +502,6 @@
 
     z-index: 1;
 }
-
-/* Texto de colección: vive fuera de la imagen, como elemento de
-   layout normal (no superpuesto), así puede ser grande sin
-   taparle nada a la foto. Items 1 y 2 lo llevan vertical al
-   lado; item 3 lo lleva horizontal debajo. */
 
 .dest-label {
     flex-shrink: 0;
@@ -689,10 +680,6 @@
     font-size: clamp(1rem, 1.3vw, 1.4rem);
     margin-top: clamp(0.6rem, 1vw, 1rem);
 }
-
-/* Responsive info-adit: pasa de 1 fila de 4 a una grilla 2x2.
-   Los tamaños ya escalan solos con clamp(); acá solo cambia
-   el número de columnas. */
 
 @media (max-width: 900px) {
 
