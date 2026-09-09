@@ -40,6 +40,48 @@
     </nav>
     <div class="menu-overlay"></div>
 
+    <main id="account-main">
+        <header class="auth-header">
+            <h1><i><span>BIENVENIDO</span><br>DE VUELTA</i></h1>
+            <p>Inicia sesión para continuar con tus compras</p>
+        </header>
+
+        <form id="login-form" class="auth-form">
+            <label for="login-email">CORREO ELECTRÓNICO</label>
+            <div class="input-wrap">
+                <img src="../img/png/icons/auth-page/email-icon.png" alt="" class="input-icon">
+                <input type="email" id="login-email" name="email" placeholder="example@email.com" required>
+            </div>
+
+            <label for="login-password">CONTRASEÑA</label>
+            <div class="input-wrap">
+                <img src="../img/png/icons/auth-page/password-icon.png" alt="" class="input-icon">
+                <input type="password" id="login-password" name="password" placeholder="••••••••" required>
+            </div>
+
+            <div class="auth-options">
+                <label class="remember-me">
+                    <input type="checkbox" id="remember-me" name="remember-me">
+                    Recordarme
+                </label>
+                <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+            </div>
+
+            <button type="submit" class="btn-login">Iniciar Sesión</button>
+
+            <div class="auth-divider"><span>O CONTINÚA CON</span></div>
+
+            <div class="social-login">
+                <button type="button" class="btn-social">Google</button>
+                <button type="button" class="btn-social">Facebook</button>
+            </div>
+
+            <p class="auth-signup">¿No tienes cuenta? <a href="#">Regístrate</a></p>
+        </form>
+
+        <a href="../index.html" class="back-home">← Volver al inicio</a>
+    </main>
+
     <footer class="main-footer">
         <article class="info-redes">
             <img src="../img/png/logo/rebelwear-imagotipo.png" alt="RebelWear Imagotipo" class="logo-footer" loading="lazy">
