@@ -98,7 +98,7 @@ Consumption logic lives isolated in `js/api.js`, kept separate from any presenta
 ## 📁 Project structure
 
 ```bash
-PROYECTO-FAKESTORE-REBELWEAR
+REBELWEAR-UI
 ├── css
 │   ├── auth.css
 │   ├── base.css
