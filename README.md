@@ -74,9 +74,9 @@ Consumption logic lives isolated in `js/api.js`, kept separate from any presenta
 
 1. **Get the project**
 
-   ```bash
+```bash
    git clone https://github.com/jorgegmch/proyecto-fakestore-rebelwear.git
-   ```
+```
 
    Or download the ZIP from the repository.
 
@@ -84,13 +84,14 @@ Consumption logic lives isolated in `js/api.js`, kept separate from any presenta
    - Locate `index.html`.
    - Open it with Live Server or directly in your browser (Chrome, Firefox, Edge, Safari). 🌐
 
-3. **View the design**
-   - The page should render fully, with all images and styles applied.
+---
 
-4. **Edit content or styles** *(optional)*
-   - Open the `.html` files with a text editor or IDE (VS Code, Sublime Text, Atom).
-   - Modify text, images, or links as needed.
-   - Files under `css/` control colors, sizes, and element positioning. 🎨
+## 🧭 Usage
+
+- Browse the catalog, filter by category (Men/Women), search by name, sort by price, and page through results.
+- Add a product to the cart from the home preview or the catalog grid.
+- Open the cart to adjust quantities or remove items — subtotal, shipping, and total update automatically.
+- Free shipping kicks in once the subtotal reaches $200.
 
 ---
 
@@ -139,22 +140,26 @@ PROYECTO-FAKESTORE-REBELWEAR
 │   ├── storage.js
 │   └── ui.js
 │
+├── .gitignore
 ├── index.html
+├── LICENSE
 └── README.md
 ```
 
 ---
 
-## 🗺️ Roadmap
+## Possible Extensions
 
-- [ ] Replace the FakeStore API with a real product database — the catalog currently depends on a read-only external API, with no way to persist or manage real inventory
-- [ ] Build out the **Offers** and **About Us** pages — the links already exist in the navbar across all 4 pages, but currently point to `#`
-- [ ] Real sign-up and login — `account.html` is UI only, with no backend or validation
-- [ ] Checkout / payment flow — the "Proceed to Payment" button in the cart isn't wired up to anything
-- [ ] Individual product detail page
+- Replace the FakeStore API with a real product database — the catalog currently depends on a read-only external API, with no way to persist or manage real inventory
+- Build out the **Offers** and **About Us** pages — the links already exist in the navbar across all 4 pages, but currently point to `#`
+- Real sign-up and login — `account.html` is UI only, with no backend or validation
+- Checkout / payment flow — the "Proceed to Payment" button in the cart isn't wired up to anything
+- Individual product detail page
 
 ---
 
-## 🚀 Author
+## License
 
-Web development by [Jorge Gomez - jorgegmch](https://github.com/jorgegmch)
+MIT — see [LICENSE](./LICENSE) for details.
+
+Built by [Jorge Gomez](https://github.com/jorgegmch)
